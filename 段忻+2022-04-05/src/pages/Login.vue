@@ -36,7 +36,7 @@ export default {
                   }
     },
     mounted(){
-        this.$refs.checkBox.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", checkWin,false);
+        // this.$refs.checkBox.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", checkWin,false);
 
     }
 }
