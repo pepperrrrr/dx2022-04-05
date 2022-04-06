@@ -1,33 +1,14 @@
-/* iphone6 7 8 */
 .background {
     background:url("../assets/moblie.png") no-repeat center 0px;
 }
-/* iphone 5 */
+/* iphone*/
 @media screen and (max-width: 320px) {
-    .background {
-    background:url("../assets/moblie.png") no-repeat center 0px;
-    }
-}
-/* iphoneX */
-@media screen and (min-width: 375px) and (-webkit-device-pixel-ratio: 3) {
-    .background {
-    background:url("../assets/moblie.png") no-repeat center 0px;
-    }
-}
-/* iphone6 7 8 plus */
-@media screen and (min-width: 414px) {
     .background {
     background:url("../assets/moblie.png") no-repeat center 0px;
     }
 }
 /* ipad */
 @media screen and (min-width: 768px) {
-    .background {
-    background:url("../assets/ipad.jpg") no-repeat center 0px;
-    }
-}
-/* ipad pro */
-@media screen and (min-width: 1024px) {
     .background {
     background:url("../assets/ipad.jpg") no-repeat center 0px;
     }

@@ -2,6 +2,10 @@
   <div class="Login">
       <div class="logo"></div>
       <button @click="login">Login</button>
+      <div v-if="checkWin" class="check" ref="checkBox">
+          <img src="../assets/scape.png" alt="">
+          <p>请横屏访问</p>
+      </div>
   </div>
 </template>
 
@@ -13,27 +17,27 @@ export default {
     component:{},
     data(){
     return {
-        
+        checkWin:false
     };
     },
     methods:{
         checkWindow(){
-            window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function(){
-                console.log(window.onorientationchange);
-                if(window.onorientationchange === 180 || window.onorientationchange === 0){
-                    console.log('竖屏状态！');
+            console.log(window.orientation);
+                if(window.orientation === 180 || window.orientation === 0){
+                    this.checkWin = true
                 }
-                if(window.onorientationchange === 90 || window.onorientationchange === -90){
-                    console.log('横屏状态！')
-                }
-            },false)
+                if(window.orientation === 90 || window.orientation === -90){
+                    this.checkWin = false;
+                    }
+                    return checkWin
         },
         login() {
             this.$router.push('/Home')
                   }
     },
     mounted(){
-        this.checkWindow();
+        this.$refs.checkBox.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", checkWin,false);
+
     }
 }
 </script>
@@ -53,5 +57,13 @@ export default {
     left:6rem;
     width: 1rem;
     height: 1rem;
+}
+.check{
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.5;
+    z-index: 2;
+        top:5rem;
+    left:6rem;
 }
 </style>
